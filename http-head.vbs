@@ -4,4 +4,6 @@ Dim WinHttpReq
 Set WinHttpReq = WScript.CreateObject("WinHttp.WinHttpRequest.5.1")
 WinHttpReq.Open "GET", sUrl
 WinHttpReq.Send
-WScript.Echo(WinHttpReq.GetAllResponseHeaders())
+Dim output
+output = WinHttpReq.Status & " - " + WinHttpReq.StatusText & vbCrLf + WinHttpReq.GetAllResponseHeaders()
+WScript.Echo(output)
